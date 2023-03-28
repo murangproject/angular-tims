@@ -1,0 +1,25 @@
+<div class="navbar bg-base-100">
+    <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">System</a>
+    </div>
+    <div class="flex-none">
+        <ul class="dropdown dropdown-end menu menu-horizontal px-1">
+            <li tabindex="0">
+                <div class="flex">
+                    <div class="badge badge-xs badge-primary"></div>
+                    <div class="badge badge-xs badge-secondary"></div>
+                    <div class="badge badge-xs badge-accent"></div>
+                    <div class="badge badge-xs badge-neutral"></div>
+                </div>
+                <ul class="dropdown-content menu w-56 p-2 bg-base-100 rounded-box">
+                    <ng-container *ngIf="themeConfig">
+                        <li *ngFor="let theme of themeConfig"><button
+                                (click)="changeTheme(theme)">{{theme.charAt(0).toUpperCase() +
+                                theme.slice(1)}}</button>
+                        </li>
+                    </ng-container>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
